@@ -36,6 +36,16 @@ oc expose pod/hello-world-pod
 
 oc expose --port 8080 pod/hello-world-pod
 
+# 이 서비스에서 제공되는 IP는 K8s 클러스터 내에서 제공되는 IP이므로 테스트를 위해서는 동일한 클러스터내의 다른 Pod에서 접근해야만 아래 테스트를 진행할수있다.
+wget -qO- 172.30.37.211:808
+
+# 아래는 K8s내부 클러스터IP에서 서비스되고있는 service/hello-world-pod를 K8s 외부에서 접근이 가능하도록 노출해주는 명령이다. 즉 Rout를 생성해준다.
+# 즉, 외부에서 서비스로 접근할수 있도록 DNS를 설정해준다.
+oc expose service/hello-world-pod
+
+
+
+
 
 
 
