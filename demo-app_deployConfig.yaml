@@ -3,18 +3,18 @@ kind: DeploymentConfig
 metadata:
   annotations:
     openshift.io/generated-by: OpenShiftNewApp
-  creationTimestamp: "2025-09-23T00:39:10Z"
-  generation: 3
+  creationTimestamp: "2025-09-24T02:53:57Z"
+  generation: 2
   labels:
     app: demo-app
     app.kubernetes.io/component: demo-app
     app.kubernetes.io/instance: demo-app
   name: demo-app
   namespace: steven-jsmin-dev
-  resourceVersion: "5171951333"
-  uid: 51254475-202b-4025-8d22-fd09cb33a663
+  resourceVersion: "5211512833"
+  uid: 969fafac-1c25-4a1c-9780-fe8b057d1edd
 spec:
-  replicas: 2
+  replicas: 1
   revisionHistoryLimit: 10
   selector:
     deploymentconfig: demo-app
@@ -37,7 +37,7 @@ spec:
         deploymentconfig: demo-app
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/steven-jsmin-dev/demo-app@sha256:219a3b1cc2003982a23349e9a5c5d7666181920ab54f31395f362cfd34e10f3c
+      - image: image-registry.openshift-image-registry.svc:5000/steven-jsmin-dev/demo-app@sha256:b1c74b462eac457ddcbc25e56501c82207ab24780215382732348d1f777ff198
         imagePullPolicy: Always
         name: demo-app
         ports:
@@ -62,29 +62,29 @@ spec:
         kind: ImageStreamTag
         name: demo-app:latest
         namespace: steven-jsmin-dev
-      lastTriggeredImage: image-registry.openshift-image-registry.svc:5000/steven-jsmin-dev/demo-app@sha256:219a3b1cc2003982a23349e9a5c5d7666181920ab54f31395f362cfd34e10f3c
+      lastTriggeredImage: image-registry.openshift-image-registry.svc:5000/steven-jsmin-dev/demo-app@sha256:b1c74b462eac457ddcbc25e56501c82207ab24780215382732348d1f777ff198
     type: ImageChange
 status:
-  availableReplicas: 2
+  availableReplicas: 1
   conditions:
-  - lastTransitionTime: "2025-09-23T00:39:16Z"
-    lastUpdateTime: "2025-09-23T00:39:16Z"
+  - lastTransitionTime: "2025-09-24T02:54:01Z"
+    lastUpdateTime: "2025-09-24T02:54:01Z"
+    message: Deployment config has minimum availability.
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2025-09-24T02:54:03Z"
+    lastUpdateTime: "2025-09-24T02:54:03Z"
     message: replication controller "demo-app-1" successfully rolled out
     reason: NewReplicationControllerAvailable
     status: "True"
     type: Progressing
-  - lastTransitionTime: "2025-09-23T00:49:40Z"
-    lastUpdateTime: "2025-09-23T00:49:40Z"
-    message: Deployment config has minimum availability.
-    status: "True"
-    type: Available
   details:
     causes:
     - type: ConfigChange
     message: config change
   latestVersion: 1
-  observedGeneration: 3
-  readyReplicas: 2
-  replicas: 2
+  observedGeneration: 2
+  readyReplicas: 1
+  replicas: 1
   unavailableReplicas: 0
-  updatedReplicas: 2
+  updatedReplicas: 1
